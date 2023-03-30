@@ -1,20 +1,24 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      CONTATOS
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-item *ngFor="let contact of contacts" (click)="showInfoModal(contact)">
+    <ion-avatar slot="start">
+      <img alt="Profile Picture" [src]="contact.image" />
+    </ion-avatar>
+    <ion-label>
+      {{ contact.name }} - {{ contact.id }}
+    </ion-label>
+    <ion-icon name="information-circle" size="small" slot="end"></ion-icon>
+  </ion-item>
+  <ion-card *ngIf="contacts.length === 0">
+    <ion-card-content>
+      <ion-label>Você ainda não tem nenhum contato.</ion-label>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
