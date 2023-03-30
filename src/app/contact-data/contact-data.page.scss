@@ -55,27 +55,46 @@ ion-grid {
   align-items: center;
   flex-direction: column;
   height: 100vh;
-}
 
-#contact-name {
-  margin-top: 1rem;
-  font-size: 2rem;
-  margin-bottom: 1.25rem;
-}
+  ion-thumbnail {
+    width: 210px;
+    height: 210px;
+    img {
+      border-radius: 100%;
+    }
+  }
 
-ion-thumbnail {
-  width: 210px;
-  height: 210px;
-  img {
-    border-radius: 100%;
+  #contact-name {
+    margin-top: 1rem;
+    font-size: 2rem;
+    margin-bottom: .5rem;
+    font-weight: bold;
+  }
+
+  ion-card {
+    width: 90vw;
   }
 }
 
-.badges {
-  width: 50px;
-  height: 50px;
-}
-
-ion-card {
-  width: 100vw;
+.badge-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  ion-col {
+    width: 20%;
+  }
+  div {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    ion-icon {
+      font-size: 1.5rem;
+      margin-bottom: .3rem;
+    }
+    ion-label {
+      font-size: .8rem;
+    }
+  }
 }

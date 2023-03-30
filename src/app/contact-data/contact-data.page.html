@@ -8,34 +8,57 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-grid *ngIf="contact">
+  <ion-grid *ngIf="contact" class="padding-x">
     <ion-row>
       <ion-thumbnail>
         <img [src]="contact.image" alt="">
       </ion-thumbnail>
     </ion-row>
     <ion-row>
-      <ion-title id="contact-name">{{ contact.name }}</ion-title>
+      <ion-label id="contact-name">{{ contact.name }}</ion-label>
     </ion-row>
-    <ion-row>
+    <ion-row class="badge-container">
       <ion-col>
-        <ion-thumbnail>
-          <img src="../../assets/icon/favicon.png" alt="">
-        </ion-thumbnail>
+        <div class="flex m-x ion-activatable ripple-parent rounded-rectangle">
+          <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+          <ion-icon slot="icon-only" name="chatbubble" color="primary"></ion-icon>
+          <ion-label color="primary">mensagem</ion-label>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div class="flex m-x ion-activatable ripple-parent rounded-rectangle">
+          <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+          <ion-icon slot="icon-only" name="call" color="primary"></ion-icon>
+          <ion-label color="primary">ligar</ion-label>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div class="flex m-x ion-activatable ripple-parent rounded-rectangle">
+          <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+          <ion-icon slot="icon-only" name="videocam" color="primary"></ion-icon>
+          <ion-label color="primary">video</ion-label>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div class="flex m-x ion-activatable ripple-parent rounded-rectangle">
+          <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+          <ion-icon slot="icon-only" name="mail" color="primary"></ion-icon>
+          <ion-label color="primary">e-mail</ion-label>
+        </div>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-card>
         <ion-item>
           <ion-card-header>
-            <ion-card-title>Card Title</ion-card-title>
+            <ion-card-title>telefone</ion-card-title>
             <ion-card-subtitle>{{ contact.id }}</ion-card-subtitle>
           </ion-card-header>
         </ion-item>
         <ion-item>
           <ion-card-header>
-            <ion-card-title>Card Title</ion-card-title>
-            <ion-card-subtitle>{{ contact.id }}</ion-card-subtitle>
+            <ion-card-title>e-mail</ion-card-title>
+            <ion-card-subtitle>{{ contact.email }}</ion-card-subtitle>
           </ion-card-header>
         </ion-item>
       </ion-card>

@@ -32,6 +32,7 @@
   --ion-font-family: 'Inter', sans-serif;
 }
 
+/*FAILED*/
 
 .failed {
   font-family: 'Raleway';
@@ -65,4 +66,25 @@
   to {
     transform: rotate(15deg);
   }
+}
+
+/* GENERAL USE */
+
+.padding-x {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: rgb(106, 183, 255);
+  background-color: white;
+  border-radius: 1rem;
+}
+
+.m-x {
+  margin-right: 1rem;
+  margin-left: 1rem;
 }
