@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { ContactsList } from '../interfaces/ContactsList';
 import { CommonModule } from '@angular/common';
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [IonicModule, CommonModule],
 })
-export class HomePage implements OnInit {
+export class HomePage {
 
   public contacts: ContactsList[] = [
     {
@@ -53,7 +53,6 @@ export class HomePage implements OnInit {
   handleChange(event: any) {
     const query = event.target.value.toLowerCase();
     this.results = this.contacts.filter(d => d.name.toLowerCase().indexOf(query) > -1);
-    this.resortList();
   }
 
   constructor(private dataService: DataService, private route: Router) {}
@@ -61,16 +60,5 @@ export class HomePage implements OnInit {
   showInfoModal(contact: ContactsList) {
     this.dataService.setData('contact', contact);
     this.route.navigateByUrl('/contact-data');
-  }
-
-  resortList() {
-    const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-    this.ordered.forEach((letter: string) => {
-
-    })
-  }
-
-  ngOnInit(): void {
-    this.resortList();
   }
 }

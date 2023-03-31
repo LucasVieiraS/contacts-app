@@ -9,9 +9,6 @@
 <ion-content [fullscreen]="true">
   <ion-searchbar placeholder="Pesquisar" show-clear-button="focus" (ionInput)="handleChange($event)"></ion-searchbar>
   <ion-list >
-    <ion-item-divider>
-      A
-    </ion-item-divider>
     <ion-item *ngFor="let contact of results" (click)="showInfoModal(contact)">
 
       <ion-label>
